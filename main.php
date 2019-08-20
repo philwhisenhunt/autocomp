@@ -17,10 +17,15 @@ $pieceEncoded = json_encode($piece);
 
 //echo $piece;
 
-// $needle = '/go(\w+)/';
-// $haystack = ['arg', 'goo', 'go', 'goo'];
-// $result = preg_grep ($needle, $haystack);
+$needle = '/go(\w+)/';
+$haystack = ['arg', 'goo', 'go', 'goo'];
+$result = preg_grep ($needle, $haystack);
+
+foreach($result as $key=>$value){
+    $value = $value . "\n";
+    echo $value;
+}
 // print_r($result);
 // print_r($pieceEncoded);
-echo $pieceEncoded;
+// echo $pieceEncoded;
 fclose($myfile);
