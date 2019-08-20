@@ -1,14 +1,26 @@
 <?php
 
+header('Content-Type: application/json');
+
 $file = file_get_contents('php://input');
-// $decoded = json_decode($file, true);
-// $piece = $decoded['key'];
-// $pieceEncoded = json_encode($piece);
+$decoded = json_decode($file);
+$piece = $decoded->name;
+$piece = $piece . "\n";
 
-// header('Content-Type: application/json');
+//this part works, which means the regular $piece is not working
+// $piece3 = "hellothere";
 
-// echo $pieceEncoded;
+$myfile = fopen('list.txt', 'a');
+fwrite($myfile, $piece);
 
-// echo $file;
-//echo "hello" + $file;
-var_dump($file);
+$pieceEncoded = json_encode($piece);
+
+//echo $piece;
+
+// $needle = '/go(\w+)/';
+// $haystack = ['arg', 'goo', 'go', 'goo'];
+// $result = preg_grep ($needle, $haystack);
+// print_r($result);
+// print_r($pieceEncoded);
+echo $pieceEncoded;
+fclose($myfile);
