@@ -1,17 +1,11 @@
 window.addEventListener("load", function (){
 
-    document.getElementById("main-form").addEventListener('submit', function(event){
-        event.preventDefault();
-    });
+   
     
-    document.getElementById("main-form").addEventListener('submit', function(event){
-        event.preventDefault();
-    });
     
     //This may help once we have that extra layer
     //document.getElementById("response").innerHTML = "Hello";
     
-    document.getElementById("send-button").addEventListener("click", sender);
     
     
     function sender(){
@@ -28,10 +22,9 @@ window.addEventListener("load", function (){
         });
         var json = JSON.stringify(object);
     
-        var request = new XMLHttpRequest();
+        // var request = new XMLHttpRequest();
         
     
-        let sectionToDisplay = document.getElementById('response');
 
         //------
         XHR.addEventListener("load", function(event){
@@ -48,15 +41,30 @@ window.addEventListener("load", function (){
             if(XHR.readyState == XMLHttpRequest.DONE) {
                 console.log('hello');
                 let reply = XHR.responseText;
+                let sectionToDisplay = document.querySelector('#response');
+
                 sectionToDisplay.textContent = reply;
             }
         }
-        request.open("POST", "main.php");
-        request.send(json);
+        XHR.open("POST", "/main.php", true);
+        XHR.send(json);
     
         
         
     
     }
+
+    document.getElementById("main-form").addEventListener('submit', function(event){
+        event.preventDefault();
+    });
+
+    document.getElementById("main-form").addEventListener('submit', function(event){
+        event.preventDefault();
+    });
+    
+    document.getElementById("send-button").addEventListener("click", sender)    ;
 })
+
+
+
 
