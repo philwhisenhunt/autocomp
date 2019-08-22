@@ -17,8 +17,11 @@ $pieceEncoded = json_encode($piece);
 
 //echo $piece;
 
-$needle = '/go(\w+)/';
-$haystack = ['arg', 'goo', 'go', 'goo'];
+// $needle = '/go(\w+)/';
+$needle = $piece;
+// $haystack = ['arg', 'goo', 'go', 'goo'];
+$haystack = ['bob', 'larry', 'sam', 'sammy'];
+
 $result = preg_grep ($needle, $haystack);
 
 foreach($result as $key=>$value){
