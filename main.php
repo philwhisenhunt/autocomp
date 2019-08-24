@@ -19,7 +19,8 @@ $pieceEncoded = json_encode($piece);
 
 $needle = '/go(\w+)/';
 echo $needle;
-$needle = '/' . $piece . '(\w+)/';
+//$needle = '/' . $piece . '(\w+)/';
+$needle = "/$piece(\w+)/";
 // echo $needle;
 // $haystack = ['arg', 'goo', 'go', 'goo'];
 $haystack = ['bob', 'larry', 'sam', 'sammy'];
