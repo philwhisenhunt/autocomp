@@ -15,11 +15,11 @@ fwrite($myfile, $piece);
 
 $pieceEncoded = json_encode($piece);
 
-var_dump($piece);
+// var_dump($piece);
 
-if( strpos(file_get_contents("list.txt"),$_GET['bo']) !== false) {
-    echo "hello";
-}
+// if( strpos(file_get_contents("list.txt"),$_GET['bo']) !== false) {
+//     echo "hello";
+// }
 //echo $piece;
 
 // $needle = '/go(\w+)/';
@@ -40,3 +40,4 @@ if( strpos(file_get_contents("list.txt"),$_GET['bo']) !== false) {
 // print_r($pieceEncoded);
 // echo $pieceEncoded;
 fclose($myfile);
+echo "hello";
